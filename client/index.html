@@ -1,0 +1,46 @@
+<head>
+  <title>rest-test</title>
+</head>
+
+<body>
+</body>
+
+<template name="layoutTemplate">
+	{{> yield}}
+</template>
+
+<template name="home">
+	{{#if loggedIn}}
+		{{> welcome}}
+	{{else}}
+		{{> login}}
+	{{/if}}
+</template>
+
+<template name="welcome">
+	<h1>Welcome {{username}}</h1>
+	<input type="button" id="logout" value="Logout">
+</template>
+
+<template name="login">
+	<form method="post" action="api/login">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="username" id="username"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="username" id="password"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" id="signup" value="Signup">
+				</td>
+				<td>
+					<input type="button" id="login" value="Login">
+				</td>	
+			</tr>
+		</table>
+	</form>
+</template>
